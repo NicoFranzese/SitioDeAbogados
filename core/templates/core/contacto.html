@@ -1,0 +1,47 @@
+{% extends 'core/base.html' %}
+
+{% block title %} Contacto {% endblock %}
+
+{% block background-header %} {% load static %} {% static 'core/img/header_pagina.jpg'%} {% endblock %}
+
+{% block headers %}
+<h2>CONTACTO</h2>
+<!-- <span class="subheading">Página Contacto</span> -->
+{% endblock %}
+
+{% block content %}
+<div class="div_center">
+  <h5>No pierdas la oportunidad de contactarnos: </h5>
+  <b>Mail:</b> franzesens@gmail.com <br>
+  <b>teléfono:</b> (011) 4444-4444
+  <br><br>
+  O bien te dejamos nuestra ubicación por si deseas pasarte por nuestras oficinas:<br><br>
+  <div style="height: 400px; width: 80%; margin-left: 10%;" id="mapa"></div>
+</div>
+<script>
+    function inicializarMapa() {
+        // Coordenadas de ejemplo (cambia según tus necesidades)
+        var latitud = -34.662605;
+        var longitud = -58.364375;
+
+        // Crear objeto de mapa
+        var mapa = new google.maps.Map(document.getElementById('mapa'), {
+            center: { lat: latitud, lng: longitud },
+            zoom: 15 // Nivel de zoom
+        });
+
+        // Marcador en la ubicación deseada
+        var marcador = new google.maps.Marker({
+            position: { lat: latitud, lng: longitud },
+            map: mapa,
+            title: 'Mi Ubicación'
+        });
+    }
+</script>
+
+<!-- Carga asíncrona de la API con el callback -->
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCp3OmUot6QK-FqlR7mrpn7mIZ-mvG0K7o&libraries=places&callback=inicializarMapa">
+</script>
+
+{% endblock %}

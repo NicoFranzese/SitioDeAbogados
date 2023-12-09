@@ -1,0 +1,48 @@
+{% extends 'core/base.html' %}
+
+{% block title %} Capacitaciones {% endblock %}
+
+{% block background-header %} {% load static %} {% static 'core/img/header_pagina.jpg'%} {% endblock %}
+
+{% block headers %}
+<h2>CAPACITACIONES</h2>
+<span class="subheading">Las mejores capacitaciones y cursos para vos</span>
+{% endblock %}
+
+{% block content %}
+
+{% for capacitacion in capacitaciones %}
+
+<!-- Proyecto -->
+<div class="card-container">  	
+  <div class="card">
+        <h2 class="section-heading title">{{capacitacion.title}}</h2>   
+    <p>{{capacitacion.descripcion}}</p>
+    <!-- <p><a href="http://google.com">Más información</a></p> -->
+    <span><b>Fecha de Inicio:</b> {{capacitacion.fecha_desde}} <b> - Fecha de Fin:</b> {{capacitacion.fecha_hasta}}</span>
+    <br>
+    <button class="button_cerrar" onclick="openPopupInscribirse()">Inscribirse</button>
+    </div>
+</div>
+
+{% endfor %}
+
+
+<div class="overlay-popup" id="popup_inscribirse">
+  <div class="popup div_center">
+      <h4>Los cursos sos ejemplares traidos de la BD de Django, no puede inscribirse a uno. </h4>
+      <button class="button_cerrar" onclick="closePopupInscribirse()">Cerrar</button>            
+  </div>
+</div>
+
+<script>
+  function openPopupInscribirse() {    
+    document.getElementById('popup_inscribirse').style.display = 'flex';
+  }
+
+  function closePopupInscribirse() {
+    document.getElementById('popup_inscribirse').style.display = 'none';
+  }
+</script>
+
+{% endblock %}

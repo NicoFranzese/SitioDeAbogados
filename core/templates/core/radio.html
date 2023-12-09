@@ -1,0 +1,31 @@
+{% extends 'core/base.html' %}
+
+{% block title %} Radio {% endblock %}
+
+{% block background-header %} {% load static %} {% static 'core/img/header_pagina.jpg'%} {% endblock %}
+
+{% block headers %}
+<h2>RADIO</h2>
+<span class="subheading">Ahora contamos con un espacio en Radio exclusivo</span>
+{% endblock %}
+
+{% block content %}
+
+<div class="overlay"></div>
+<div class="container">
+  <div class="row div_center">
+    Nuestra radio es más que una emisión de sonidos; es un puente que conecta directamente con nuestra comunidad. A través de programas educativos, entrevistas con expertos legales y discusiones sobre temas de actualidad, buscamos mantener a nuestra audiencia informada y empoderada con conocimientos legales cruciales.<br><br>
+    Presentamos a algunos de los mejores expertos legales en nuestra radio. Desde abogados destacados hasta jueces y profesionales de diversas áreas legales, nuestras entrevistas proporcionan una visión profunda y valiosa. Conectamos a nuestra audiencia con la experiencia de los líderes en el campo legal para ofrecer perspectivas únicas y consejos prácticos.<br><br>
+    <b> Sintonizanos los días sábados de 9:00hs a 12:00hs. ¡No te lo pierdas! </b><br><br>
+
+    <!-- <div style="width: 90%;"> -->
+      <!-- <div style="width: 40%;">
+        <img src="../../static/core/img/radio.jpg">
+      </div> -->
+        <iframe style="width: 50%; height: auto;" src="https://www.youtube.com/embed/watch?v=WJcZC6eDb7E&list=UULFBtw9u2kD8YEugRnHJtGPUQ&ab_channel=JorgeRiZZo" frameborder="0"></iframe>
+        <br><br>
+    <!-- </div> -->
+  </div>
+</div>
+
+{% endblock %}

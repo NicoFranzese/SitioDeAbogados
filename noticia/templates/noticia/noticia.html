@@ -1,0 +1,38 @@
+{% extends 'core/base.html' %}
+
+{% block title %} Noticias {% endblock %}
+
+{% block background-header %} {% load static %} {% static 'core/img/header_pagina.jpg'%} {% endblock %}
+
+{% block headers %}
+<h2>NOTICIAS</h2>
+<!-- <span class="subheading">Página Noticias</span> -->
+{% endblock %}
+
+{% block content %}
+    
+<div class="overlay"></div>
+<!-- <div class="container">
+  <div class="row">
+    <h4>Detalle de página Noticias</h4>
+  </div>
+</div> -->
+
+{% for noticia in noticias %}
+
+<!-- Proyecto -->
+<div class="row noticia">  	
+    <div class="col-lg-3 col-md-4 offset-lg-1">
+        <img class="img-fluid" src="{{noticia.image.url}}" alt="">
+    </div>
+  <div class="col-lg-7 col-md-8">
+        <h2 class="section-heading title">{{noticia.title}}</h2>   
+    <p>{{noticia.descripcion}}</p>
+    <!-- <p><a href="http://google.com">Más información</a></p> -->
+    </div>
+</div>
+<br>
+{% endfor %}
+
+
+{% endblock %}
